@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 
-function getNonce() {
+export function getNonce() {
   let text = "";
   const possible =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

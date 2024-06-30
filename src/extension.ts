@@ -3,11 +3,16 @@
 import * as vscode from "vscode";
 import DisposableManager from "./utils/DisposableManager";
 import { WebviewPanel } from "./webviews/Webview";
+import { SidebarProvider } from "./webviews/SidebarView";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
   const dm = new DisposableManager(context);
+  const sidebarProvider = SidebarProvider.createSidebar(
+    context,
+    "vstodo-sidebar"
+  );
 
   let helloPanel: WebviewPanel | undefined;
 
